@@ -14,7 +14,13 @@ async function getMatchData() {
         (match) => `${match.name}, ${match.status}`
       );
       console.log(relevantData);
-    });
+
+      document.getElementById("matches").innerHTML = relevantData.map(match => `<li>${match}</li>`).join('');
+        
+      return relevantData;
+    })
+    .catch(e => console.log(e));
 }
+
 
 getMatchData();
