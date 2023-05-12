@@ -10,7 +10,7 @@ async function getMatchData() {
 
       if (!matchesList) return [];
 
-      const relevantData = matchesList.map(
+      const relevantData = matchesList.filter(match => match.series_id == "c75f8952-74d4-416f-b7b4-7da4b4e3ae6e").map(
         (match) => `${match.name}, ${match.status}`
       );
       console.log(relevantData);
